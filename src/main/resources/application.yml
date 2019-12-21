@@ -1,0 +1,10 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #是否需要向服务中心注册，由于该实例本身就是服务中心，不需要注册、所以设置为false
+    fetch-registry: false
+    #是否需要检索服务，由于自己是服务中心，服务中心的职责是维护服务，所以设置为false
+    register-with-eureka: false
