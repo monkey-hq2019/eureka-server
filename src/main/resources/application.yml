@@ -1,10 +1,28 @@
+#端口号
 server:
   port: 8761
+#eureka配置
 eureka:
   instance:
-    hostname: localhost
+    #主机名
+    hostname: server1
+  server:
+    #关闭Server的保护模式
+    enable-self-preservation: false
+    #自动清理的间隔，单位毫秒
+    eviction-interval-timer-in-ms: 6000
   client:
     #是否需要向服务中心注册，由于该实例本身就是服务中心，不需要注册、所以设置为false
     fetch-registry: false
     #是否需要检索服务，由于自己是服务中心，服务中心的职责是维护服务，所以设置为false
     register-with-eureka: false
+
+#服务器安全认证信息
+spring:
+  security:
+    user:
+      name: kenny-ho
+      password: 123456
+  #指定当前环境：master
+  profiles:
+    active: master
